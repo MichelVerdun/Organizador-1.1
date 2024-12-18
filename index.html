@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Horários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Organizador de Horários</h1>
+        <nav>
+            <button id="btn-home">Início</button>
+            <button id="btn-calendar">Calendário</button>
+            <button id="btn-goals">Objetivos</button>
+        </nav>
+    </header>
+
+    <!-- Página Início (Visão Semanal) -->
+    <div id="home-page">
+        <div class="calendar-navigation">
+            <button id="prev-week">Semana Anterior</button>
+            <span id="current-week-label">Semana: 16/12/24 - 22/12/24</span>
+            <button id="next-week">Próxima Semana</button>
+        </div>
+
+        <!-- Visão Semanal -->
+        <div id="weekly-calendar" class="calendar-container">
+            <h2>Calendário - Visão Semanal</h2>
+            <div class="calendar-week">
+                <div class="day" id="monday">
+                    <h3>Segunda - 18/12/24</h3>
+                    <label><input type="checkbox" id="monday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="tuesday">
+                    <h3>Terça - 19/12/24</h3>
+                    <label><input type="checkbox" id="tuesday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="wednesday">
+                    <h3>Quarta - 20/12/24</h3>
+                    <label><input type="checkbox" id="wednesday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="thursday">
+                    <h3>Quinta - 21/12/24</h3>
+                    <label><input type="checkbox" id="thursday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="friday">
+                    <h3>Sexta - 22/12/24</h3>
+                    <label><input type="checkbox" id="friday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="saturday">
+                    <h3>Sábado - 23/12/24</h3>
+                    <label><input type="checkbox" id="saturday-task"> Tarefa concluída</label>
+                </div>
+                <div class="day" id="sunday">
+                    <h3>Domingo - 24/12/24</h3>
+                    <label><input type="checkbox" id="sunday-task"> Tarefa concluída</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Calendário (Visão Mensal) -->
+    <div id="calendar-page" style="display: none;">
+        <h2>Calendário - Visão Mensal</h2>
+        <p id="month-year-label">Dezembro 2024</p>
+        <div class="month-view">
+            <div class="month-grid" id="month-grid"></div>
+        </div>
+        <aside class="progress-container">
+            <h2>Progresso Geral</h2>
+            <div class="progress-bar">
+                <div id="overall-progress-fill"></div>
+            </div>
+            <p id="overall-progress-text">0% Concluído</p>
+        </aside>
+    </div>
+
+    <!-- Página de Objetivos -->
+    <div id="goals-page" style="display: none;">
+        <h2>Objetivos</h2>
+        <div class="goal-editor">
+            <input type="text" id="goal-name" placeholder="Nome do Objetivo">
+            <input type="number" id="goal-hours" placeholder="Horas Necessárias">
+            <button id="add-goal">Adicionar Objetivo</button>
+        </div>
+        <h3>Lista de Objetivos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Horas</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="goals-list"></tbody>
+        </table>
+
+        <div class="schedule-goal">
+            <h3>Programar Objetivo no Calendário</h3>
+            <label for="goal-select">Objetivo:</label>
+            <select id="goal-select"></select>
+            <label for="goal-date">Data:</label>
+            <input type="date" id="goal-date">
+            <label for="start-time">Início:</label>
+            <input type="time" id="start-time">
+            <label for="end-time">Fim:</label>
+            <input type="time" id="end-time">
+            <button id="schedule-goal-btn">Programar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
